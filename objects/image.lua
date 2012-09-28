@@ -93,6 +93,8 @@ function image:SetImage(image)
 	
 	self.width = self.image:getWidth()
 	self.height = self.image:getHeight()
+	
+	return self
 		
 end
 
@@ -113,6 +115,8 @@ end
 function image:SetColor(data)
 
 	self.imagecolor = data
+	
+	return self
 	
 end
 

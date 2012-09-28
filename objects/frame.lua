@@ -271,6 +271,8 @@ function frame:SetName(name)
 
 	self.name = name
 	
+	return self
+	
 end
 
 --[[---------------------------------------------------------
@@ -290,6 +292,8 @@ end
 function frame:SetDraggable(bool)
 
 	self.draggable = bool
+	
+	return self
 	
 end
 
@@ -312,6 +316,8 @@ end
 function frame:SetScreenLocked(bool)
 
 	self.screenlocked = bool
+	
+	return self
 	
 end
 
@@ -337,6 +343,8 @@ function frame:ShowCloseButton(bool)
 	close.visible = bool
 	self.showclose = bool
 	
+	return self
+	
 end
 
 --[[---------------------------------------------------------
@@ -353,11 +361,11 @@ function frame:MakeTop()
 	local numbasechildren = #basechildren
 	
 	if numbasechildren == 1 then
-		return
+		return self
 	end
 	
 	if basechildren[numbasechildren] == self then
-		return
+		return self
 	end
 	
 	-- make this the top object
@@ -371,6 +379,8 @@ function frame:MakeTop()
 	end
 	
 	basechildren[key]:mousepressed(x, y, "l")
+	
+	return self
 		
 end
 
@@ -415,6 +425,8 @@ function frame:SetModal(bool)
 		
 	end
 	
+	return self
+	
 end
 
 --[[---------------------------------------------------------
@@ -447,5 +459,7 @@ function frame:SetVisible(bool)
 	if self.showclose == true then
 		closebutton.visible = bool
 	end
+	
+	return self
 	
 end

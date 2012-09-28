@@ -276,6 +276,8 @@ function tabs:AddTab(name, object, tip, image)
 	if autosize == true and retainsize == false then
 		object:SetSize(self.width - padding*2, (self.height - tabheight) - padding*2)
 	end
+	
+	return self
 		
 end
 
@@ -386,6 +388,8 @@ function tabs:SwitchToTab(tabnumber)
 	self.tab = tabnumber
 	self.children[tabnumber].visible = true
 	
+	return self
+	
 end
 
 --[[---------------------------------------------------------
@@ -402,6 +406,8 @@ function tabs:SetScrollButtonSize(width, height)
 		end
 	end
 	
+	return self
+	
 end
 
 --[[---------------------------------------------------------
@@ -411,6 +417,8 @@ end
 function tabs:SetPadding(padding)
 
 	self.padding = padding
+	
+	return self
 	
 end
 
@@ -440,6 +448,8 @@ function tabs:SetTabHeight(height)
 		end
 	end
 	
+	return self
+	
 end
 
 --[[---------------------------------------------------------
@@ -455,6 +465,8 @@ function tabs:SetToolTipFont(font)
 			v.tooltip:SetFont(font)
 		end
 	end
+	
+	return self
 	
 end
 

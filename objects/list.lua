@@ -148,7 +148,7 @@ function list:mousepressed(x, y, button)
 	local visible = self.visible
 	
 	if visible == false then
-		return
+		return self
 	end
 	
 	local toplist 	= self:IsTopList()
@@ -191,6 +191,8 @@ function list:mousepressed(x, y, button)
 	for k, v in ipairs(children) do
 		v:mousepressed(x, y, button)
 	end
+	
+	return self
 
 end
 
@@ -201,7 +203,7 @@ end
 function list:AddItem(object)
 	
 	if object.type == "frame" then
-		return
+		return self
 	end
 
 	local children = self.children
@@ -214,6 +216,8 @@ function list:AddItem(object)
 	self:CalculateSize()
 	self:RedoLayout()
 	
+	return self
+	
 end
 
 --[[---------------------------------------------------------
@@ -225,6 +229,8 @@ function list:RemoveItem(object)
 	object:Remove()
 	self:CalculateSize()
 	self:RedoLayout()
+	
+	return self
 	
 end
 
@@ -313,6 +319,8 @@ function list:CalculateSize()
 		
 	end
 	
+	return self
+	
 end
 
 --[[---------------------------------------------------------
@@ -389,6 +397,8 @@ function list:RedoLayout()
 		
 	end
 	
+	return self
+	
 end
 
 --[[---------------------------------------------------------
@@ -412,6 +422,8 @@ function list:SetDisplayType(type)
 		self:CalculateSize()
 		self:RedoLayout()
 	end
+	
+	return self
 
 end
 
@@ -441,6 +453,8 @@ function list:SetPadding(amount)
 		self:RedoLayout()
 	end
 	
+	return self
+	
 end
 
 --[[---------------------------------------------------------
@@ -459,6 +473,8 @@ function list:SetSpacing(amount)
 		self:RedoLayout()
 	end
 	
+	return self
+	
 end
 
 --[[---------------------------------------------------------
@@ -470,6 +486,8 @@ function list:Clear()
 	self.children = {}
 	self:CalculateSize()
 	self:RedoLayout()
+	
+	return self
 
 end
 
@@ -483,6 +501,8 @@ function list:SetWidth(width)
 	self:CalculateSize()
 	self:RedoLayout()
 	
+	return self
+	
 end
 
 --[[---------------------------------------------------------
@@ -494,6 +514,8 @@ function list:SetHeight(height)
 	self.height = height
 	self:CalculateSize()
 	self:RedoLayout()
+	
+	return self
 	
 end
 
@@ -507,6 +529,8 @@ function list:SetSize(width, height)
 	self.height = height
 	self:CalculateSize()
 	self:RedoLayout()
+	
+	return self
 	
 end
 
@@ -541,5 +565,7 @@ function list:SetAutoScroll(bool)
 	if self:GetScrollBar() ~= false then
 		self:GetScrollBar().autoscroll = bool
 	end
+	
+	return self
 	
 end

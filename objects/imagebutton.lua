@@ -167,6 +167,8 @@ function imagebutton:SetText(text)
 
 	self.text = text
 	
+	return self
+	
 end
 
 --[[---------------------------------------------------------
@@ -187,6 +189,8 @@ function imagebutton:SetClickable(bool)
 
 	self.clickable = bool
 	
+	return self
+	
 end
 
 --[[---------------------------------------------------------
@@ -206,6 +210,8 @@ end
 function imagebutton:SetEnabled(bool)
 
 	self.enabled = bool
+	
+	return self
 	
 end
 
@@ -229,6 +235,8 @@ function imagebutton:SetImage(image)
 		self.image = love.graphics.newImage(image)
 	else
 		self.image = image
+	
+	return self
 	end
 
 end
@@ -255,5 +263,7 @@ function imagebutton:SizeToImage()
 		self.width = image:getWidth()
 		self.height = image:getHeight()
 	end
+	
+	return self
 
 end

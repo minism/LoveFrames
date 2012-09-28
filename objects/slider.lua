@@ -179,11 +179,11 @@ end
 function slider:SetValue(value)
 
 	if value > self.max then
-		return
+		return self
 	end
 	
 	if value < self.min then
-		return
+		return self
 	end
 	
 	local decimals 		= self.decimals
@@ -210,6 +210,8 @@ function slider:SetValue(value)
 		self.OnValueChanged(self)
 	end
 	
+	return self
+	
 end
 
 --[[---------------------------------------------------------
@@ -234,6 +236,8 @@ function slider:SetMax(max)
 		self.value = self.max
 	end
 	
+	return self
+	
 end
 
 --[[---------------------------------------------------------
@@ -257,6 +261,8 @@ function slider:SetMin(min)
 	if self.value < self.min then
 		self.value = self.min
 	end
+	
+	return self
 	
 end
 
@@ -287,6 +293,8 @@ function slider:SetMinMax(min, max)
 		self.value = self.min
 	end
 	
+	return self
+	
 end
 
 --[[---------------------------------------------------------
@@ -306,6 +314,8 @@ end
 function slider:SetText(text)
 
 	self.text = text
+	
+	return self
 	
 end
 
@@ -327,6 +337,8 @@ function slider:SetDecimals(decimals)
 
 	self.decimals = decimals
 	
+	return self
+	
 end
 
 --[[---------------------------------------------------------
@@ -342,6 +354,8 @@ function slider:SetButtonSize(width, height)
 		sliderbutton.width = width
 		sliderbutton.height = height
 	end
+	
+	return self
 	
 end
 
@@ -373,5 +387,7 @@ function slider:SetSlideType(slidetype)
 	if slidetype == "vertical" then
 		self:SetValue(self.min)
 	end
+	
+	return self
 	
 end

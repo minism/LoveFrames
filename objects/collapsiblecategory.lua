@@ -191,6 +191,8 @@ function collapsiblecategory:SetText(text)
 
 	self.text = text
 	
+	return self
+	
 end
 
 --[[---------------------------------------------------------
@@ -224,6 +226,8 @@ function collapsiblecategory:SetObject(object)
 	
 	table.insert(self.children, object)
 	
+	return self
+	
 end
 
 --[[---------------------------------------------------------
@@ -251,6 +255,8 @@ function collapsiblecategory:SetSize(width, height)
 
 	self.width = width
 	
+	return self
+	
 end
 
 --[[---------------------------------------------------------
@@ -258,8 +264,8 @@ end
 	- desc: sets the object's height
 --]]---------------------------------------------------------
 function collapsiblecategory:SetHeight(height)
-
-	return
+	
+	return self
 	
 end
 
@@ -270,6 +276,8 @@ end
 function collapsiblecategory:SetClosedHeight(height)
 
 	self.closedheight = height
+	
+	return self
 	
 end
 
@@ -309,6 +317,8 @@ function collapsiblecategory:SetOpen(bool)
 	if self.OnOpenedClosed then
 		self.OnOpenedClosed(self)
 	end
+	
+	return self
 	
 end
 

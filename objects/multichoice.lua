@@ -140,6 +140,8 @@ function multichoice:AddChoice(choice)
 	local choices = self.choices
 	table.insert(choices, choice)
 	
+	return self
+	
 end
 
 --[[---------------------------------------------------------
@@ -149,6 +151,8 @@ end
 function multichoice:SetChoice(choice)
 
 	self.choice = choice
+	
+	return self
 	
 end
 
@@ -165,6 +169,8 @@ function multichoice:SelectChoice(choice)
 		self.OnChoiceSelected(self, choice)
 	end
 	
+	return self
+	
 end
 
 --[[---------------------------------------------------------
@@ -174,6 +180,8 @@ end
 function multichoice:SetListHeight(height)
 
 	self.listheight = height
+	
+	return self
 	
 end
 
@@ -185,6 +193,8 @@ function multichoice:SetPadding(padding)
 
 	self.listpadding = padding
 	
+	return self
+	
 end
 
 --[[---------------------------------------------------------
@@ -194,6 +204,8 @@ end
 function multichoice:SetSpacing(spacing)
 
 	self.listspacing = spacing
+	
+	return self
 	
 end
 

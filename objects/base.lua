@@ -195,6 +195,8 @@ function base:SetPos(x, y)
 		self.staticy = y
 	end
 	
+	return self
+
 end
 
 --[[---------------------------------------------------------
@@ -211,6 +213,8 @@ function base:SetX(x)
 	else
 		self.staticx = x
 	end
+
+	return self
 
 end
 
@@ -229,6 +233,8 @@ function base:SetY(y)
 		self.staticy = y
 	end
 	
+	return self
+
 end
 
 --[[---------------------------------------------------------
@@ -315,6 +321,8 @@ function base:Center()
 		self.staticy = height/2 - self.height/2
 	end
 	
+	return self
+
 end
 
 --[[---------------------------------------------------------
@@ -334,6 +342,8 @@ function base:CenterX()
 		self.staticx = width/2 - self.width/2
 	end
 	
+	return self
+
 end
 
 --[[---------------------------------------------------------
@@ -353,6 +363,8 @@ function base:CenterY()
 		self.staticy = height/2 - self.height/2
 	end
 	
+	return self
+
 end
 
 --[[---------------------------------------------------------
@@ -364,6 +376,8 @@ function base:SetSize(width, height)
 	self.width = width
 	self.height = height
 	
+	return self
+
 end
 
 --[[---------------------------------------------------------
@@ -373,6 +387,8 @@ end
 function base:SetWidth(width)
 
 	self.width = width
+
+	return self
 	
 end
 
@@ -383,6 +399,8 @@ end
 function base:SetHeight(height)
 
 	self.height = height
+
+	return self
 	
 end
 
@@ -439,6 +457,8 @@ function base:SetVisible(bool)
 		end
 	end
 	
+	return self
+
 end
 
 --[[---------------------------------------------------------
@@ -474,6 +494,8 @@ function base:SetParent(parent)
 	self.parent = tparent
 	
 	table.insert(tparent.children, self)
+	
+	return self
 
 end
 
@@ -545,6 +567,8 @@ function base:SetClickBounds(x, y, width, height)
 		end
 	end
 	
+	return self
+	
 end
 
 --[[---------------------------------------------------------
@@ -581,6 +605,8 @@ function base:RemoveClickBounds()
 			v:RemoveClickBounds()
 		end
 	end
+	
+	return self
 	
 end
 
@@ -855,6 +881,8 @@ function base:MoveToTop()
 		table.insert(pchildren, self)
 	end
 	
+	return self
+	
 end
 
 --[[---------------------------------------------------------
@@ -880,6 +908,8 @@ function base:SetSkin(name)
 		end
 	end
 	
+	return self
+	
 end
 
 --[[---------------------------------------------------------
@@ -899,6 +929,8 @@ end
 function base:SetAlwaysUpdate(bool)
 
 	self.alwaysupdate = bool
+	
+	return self
 
 end
 
@@ -920,6 +952,8 @@ end
 function base:SetRetainSize(bool)
 
 	self.retainsize = bool
+	
+	return self
 	
 end
 

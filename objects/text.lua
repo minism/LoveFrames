@@ -136,7 +136,7 @@ function text:SetText(t)
 		tdata = t
 		self.original = t
 	else
-		return
+		return self
 	end
 	
 	for k, v in ipairs(tdata) do
@@ -292,6 +292,8 @@ function text:SetText(t)
 			
 	self.height = drawy + height
 	
+	return self
+	
 end
 
 --[[---------------------------------------------------------
@@ -326,6 +328,8 @@ function text:DrawText()
 	
 	end
 	
+	return self
+	
 end
 
 --[[---------------------------------------------------------
@@ -336,6 +340,8 @@ function text:SetMaxWidth(width)
 
 	self.maxw = width
 	self:SetText(self.original)
+	
+	return self
 	
 end
 
@@ -357,6 +363,8 @@ function text:SetWidth(width)
 
 	self:SetMaxWidth(width)
 	
+	return self
+	
 end
 
 --[[---------------------------------------------------------
@@ -365,7 +373,7 @@ end
 --]]---------------------------------------------------------
 function text:SetHeight(height)
 	
-	return
+	return self
 	
 end
 
@@ -376,6 +384,8 @@ end
 function text:SetSize(width, height)
 
 	self:SetMaxWidth(width)
+	
+	return self
 	
 end
 
@@ -393,6 +403,8 @@ function text:SetFont(font)
 	if original then
 		self:SetText(original)
 	end
+	
+	return self
 	
 end
 

@@ -200,6 +200,8 @@ function columnlist:AdjustColumns()
 		x = x + columnwidth
 	end
 	
+	return self
+	
 end
 
 --[[---------------------------------------------------------
@@ -218,6 +220,8 @@ function columnlist:AddColumn(name)
 	list:SetSize(self.width, self.height)
 	list:SetPos(0, 0)
 	
+	return self
+	
 end
 
 --[[---------------------------------------------------------
@@ -230,6 +234,8 @@ function columnlist:AddRow(...)
 	local list = internals[1]
 	
 	list:AddRow(arg)
+	
+	return self
 	
 end
 
@@ -268,6 +274,8 @@ function columnlist:SetSize(width, height)
 	list:SetSize(width, height)
 	list:SetPos(0, 0)
 	
+	return self
+	
 end
 
 --[[---------------------------------------------------------
@@ -283,6 +291,8 @@ function columnlist:SetWidth(width)
 	
 	list:SetSize(width)
 	list:SetPos(0, 0)
+	
+	return self
 	
 end
 
@@ -300,6 +310,8 @@ function columnlist:SetHeight(height)
 	list:SetSize(height)
 	list:SetPos(0, 0)
 	
+	return self
+	
 end
 
 --[[---------------------------------------------------------
@@ -313,6 +325,8 @@ function columnlist:SetMaxColorIndex(num)
 	local list = internals[1]
 	
 	list.colorindexmax = num
+	
+	return self
 	
 end
 
@@ -347,5 +361,7 @@ function columnlist:SetAutoScroll(bool)
 			list:GetScrollBar().autoscroll = bool
 		end
 	end
+	
+	return self
 	
 end

@@ -166,6 +166,8 @@ function button:SetText(text)
 
 	self.text = text
 	
+	return self
+	
 end
 
 --[[---------------------------------------------------------
@@ -186,6 +188,8 @@ function button:SetClickable(bool)
 
 	self.clickable = bool
 	
+	return self
+	
 end
 
 --[[---------------------------------------------------------
@@ -205,6 +209,8 @@ end
 function button:SetEnabled(bool)
 
 	self.enabled = bool
+	
+	return self
 	
 end
 

@@ -240,11 +240,11 @@ function textinput:RunKey(key, unicode)
 	local focus = self.focus
 	
 	if visible == false then
-		return
+		return self
 	end
 	
 	if self.focus == false then
-		return
+		return self
 	end
 	
 	local text = self.text
@@ -302,7 +302,7 @@ function textinput:RunKey(key, unicode)
 			end
 		
 			if #self.text == self.limit and self.limit ~= 0 then
-				return
+				return self
 			end
 			
 			ckey = string.char(unicode)
@@ -315,7 +315,7 @@ function textinput:RunKey(key, unicode)
 					end
 				end
 				if found == false then
-					return
+					return self
 				end
 			end
 			
@@ -327,7 +327,7 @@ function textinput:RunKey(key, unicode)
 					end
 				end
 				if found == true then
-					return
+					return self
 				end
 			end
 			
@@ -356,6 +356,8 @@ function textinput:RunKey(key, unicode)
 		end
 	end
 	
+	return self
+	
 end
 
 --[[---------------------------------------------------------
@@ -377,6 +379,8 @@ function textinput:MoveBlinker(num, exact)
 	end
 	
 	self.showblink = true
+	
+	return self
 	
 end
 
@@ -412,6 +416,8 @@ function textinput:RunBlink()
 	
 	self.blinkx = self.textx + width
 	self.blinky	= self.texty
+	
+	return self
 	
 end
 
@@ -498,6 +504,8 @@ function textinput:PositionText()
 	self.textx = self.x + self.xoffset + self.textxoffset
 	self.texty = self.y + self.textyoffset
 	
+	return self
+	
 end
 
 --[[---------------------------------------------------------
@@ -507,6 +515,8 @@ end
 function textinput:SetTextOffsetX(num)
 
 	self.textxoffset = num
+	
+	return self
 	
 end
 
@@ -518,6 +528,8 @@ function textinput:SetTextOffsetY(num)
 
 	self.textyoffset = num
 	
+	return self
+	
 end
 
 --[[---------------------------------------------------------
@@ -527,6 +539,8 @@ end
 function textinput:SetFont(font)
 
 	self.font = font
+	
+	return self
 	
 end
 
@@ -538,6 +552,8 @@ function textinput:SetTextColor(color)
 
 	self.textcolor = color
 	
+	return self
+	
 end
 
 --[[---------------------------------------------------------
@@ -547,6 +563,8 @@ end
 function textinput:SetFocus(focus)
 
 	self.focus = focus
+	
+	return self
 	
 end
 
@@ -578,6 +596,8 @@ function textinput:SetLimit(limit)
 
 	self.limit = limit
 	
+	return self
+	
 end
 
 --[[---------------------------------------------------------
@@ -589,6 +609,8 @@ function textinput:SetUsable(usable)
 
 	self.usable = usable
 	
+	return self
+	
 end
 
 --[[---------------------------------------------------------
@@ -599,6 +621,8 @@ end
 function textinput:SetUnusable(unusable)
 
 	self.unusable = unusable
+	
+	return self
 	
 end
 
@@ -612,6 +636,8 @@ function textinput:Clear()
 	self.xoffset 		= 0
 	self.textxoffset 	= 0
 	self.blinknum 		= 0
+	
+	return self
 	
 end
 

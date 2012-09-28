@@ -222,6 +222,8 @@ function checkbox:SetText(text)
 		
 	end
 	
+	return self
+	
 end
 
 --[[---------------------------------------------------------
@@ -250,6 +252,8 @@ function checkbox:SetSize(width, height)
 	self.boxwidth = width
 	self.boxheight = height
 	
+	return self
+	
 end
 
 --[[---------------------------------------------------------
@@ -260,6 +264,8 @@ function checkbox:SetWidth(width)
 
 	self.boxwidth = width
 	
+	return self
+	
 end
 
 --[[---------------------------------------------------------
@@ -269,6 +275,8 @@ end
 function checkbox:SetHeight(height)
 
 	self.boxheight = height
+	
+	return self
 	
 end
 
@@ -283,6 +291,8 @@ function checkbox:SetChecked(bool)
 	if self.OnChanged then
 		self.OnChanged(self)
 	end
+	
+	return self
 	
 end
 
@@ -310,6 +320,8 @@ function checkbox:SetFont(font)
 	if text then
 		text:SetFont(font)
 	end
+	
+	return self
 	
 end
 
